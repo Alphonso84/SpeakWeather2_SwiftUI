@@ -11,6 +11,7 @@
 		D0F7FBB924F1CABB00949596 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F7FBB824F1CABB00949596 /* ContentView.swift */; };
 		D0F7FBBB24F1CABD00949596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0F7FBBA24F1CABD00949596 /* Assets.xcassets */; };
 		D0F7FBBE24F1CABD00949596 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0F7FBBD24F1CABD00949596 /* Preview Assets.xcassets */; };
+		D0F7FBC624F1F57900949596 /* WeatherRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F7FBC524F1F57900949596 /* WeatherRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		D0F7FBBA24F1CABD00949596 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0F7FBBD24F1CABD00949596 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0F7FBBF24F1CABD00949596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0F7FBC524F1F57900949596 /* WeatherRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				D0F7FBB624F1CABB00949596 /* SpeakWeather2_SwiftUIApp.swift */,
 				D0F7FBB824F1CABB00949596 /* ContentView.swift */,
+				D0F7FBC524F1F57900949596 /* WeatherRowView.swift */,
 				D0F7FBBA24F1CABD00949596 /* Assets.xcassets */,
 				D0F7FBBF24F1CABD00949596 /* Info.plist */,
 				D0F7FBBC24F1CABD00949596 /* Preview Content */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F7FBC624F1F57900949596 /* WeatherRowView.swift in Sources */,
 				D0F7FBB924F1CABB00949596 /* ContentView.swift in Sources */,
 				D0F7FBB724F1CABB00949596 /* SpeakWeather2_SwiftUIApp.swift in Sources */,
 			);
