@@ -26,12 +26,16 @@ struct ContentView: View {
                .pickerStyle(SegmentedPickerStyle())
                 
                 List(0..<10, id: \.self) {row in
-                  
+                    ZStack {
                         HStack {
                             Text("Test")
                         }
-                
+                    }
                 }
+                
+                .frame(width: 400, height: 450, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                
+                .offset(y: 10)
                
               Spacer()
             }
