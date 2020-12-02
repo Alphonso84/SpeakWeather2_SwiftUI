@@ -20,10 +20,10 @@ struct CityCardView: View {
             Text(city)
                 .bold()
                 .font(.title)
-                .foregroundColor(.white)
+                .foregroundColor(Color(.label))
             Text(condition)
                 .font(.title2)
-                .foregroundColor(.white)
+                .foregroundColor(Color(.label))
             Image(systemName: image)
                 .renderingMode(.original)
                 .resizable()
@@ -31,7 +31,7 @@ struct CityCardView: View {
             Text("\(temp)")
                 .bold()
                 .font(.largeTitle)
-                .foregroundColor(.white)
+                .foregroundColor(Color(.label))
         }
         .frame(width:175, height: 150)
         .padding()
@@ -40,7 +40,7 @@ struct CityCardView: View {
                 .stroke(lineWidth: 1)
                 .shadow(color: .gray, radius: 10, x: 2, y: 1))
         
-        .foregroundColor(.black)
+        .foregroundColor(Color(.label))
         
     }
 }

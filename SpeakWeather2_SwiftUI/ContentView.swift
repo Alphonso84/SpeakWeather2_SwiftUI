@@ -13,10 +13,11 @@ struct ContentView: View {
     @State private var pickerSelection = Int()
     var body: some View {
         ZStack {
-            BackgroundView()
+           // BackgroundView()
             VStack {
                 Spacer()
                 ScrollingCardView()
+                    .padding(.top)
                Picker(selection:$pickerSelection, label:Text("Picker"), content:{
                     Text("Day").tag(0)
                     Text("Week").tag(1)
@@ -32,11 +33,8 @@ struct ContentView: View {
                         }
                     }
                 }
-                
                 .frame(width: 400, height: 450, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                
                 .offset(y: 10)
-               
               Spacer()
             }
         }
