@@ -10,10 +10,10 @@ import SwiftUI
 
 
 struct CityCardView: View {
-    var city: String
-    var condition: String
-    var image: String
-    var temp: Int
+    @State var city: String = "San Francisco"
+    @State var condition: String = "Sunny"
+    @State var image: String = "sun.fill"
+    @State var temp: Int = 75
     
     var body: some View {
         VStack {
@@ -42,5 +42,11 @@ struct CityCardView: View {
         
         .foregroundColor(.black)
         
+    }
+}
+
+struct CityCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        CityCardView()
     }
 }

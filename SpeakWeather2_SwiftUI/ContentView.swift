@@ -10,20 +10,30 @@ import SwiftUI
 var cityArray = ["San Francisco","Oakland","San Leandro","San Jose","Antioch", "Alameda"]
 
 struct ContentView: View {
+    @State private var pickerSelection = Int()
     var body: some View {
         ZStack {
             BackgroundView()
             VStack {
+                Spacer()
                 ScrollingCardView()
-//                Picker(selection: .constant(1)/*@END_MENU_TOKEN@*/, label: /*@START_MENU_TOKEN@*/Text("Picker"), content: /*@START_MENU_TOKEN@*/{
-//                    Text("Day").tag(1)
-//                    Text("Week").tag(2)
-//                }/*@END_MENU_TOKEN@*/)
-//                .padding(.bottom)
-//                .pickerStyle(SegmentedPickerStyle())
-//                List{
-//
-//                }
+               Picker(selection:$pickerSelection, label:Text("Picker"), content:{
+                    Text("Day").tag(0)
+                    Text("Week").tag(1)
+                })
+               .padding(.bottom)
+               .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+               .pickerStyle(SegmentedPickerStyle())
+                
+                List(0..<10, id: \.self) {row in
+                  
+                        HStack {
+                            Text("Test")
+                        }
+                
+                }
+               
+              Spacer()
             }
         }
         
@@ -45,6 +55,7 @@ struct ScrollingCardView: View {
                 }
             }
             .frame(width: 500,alignment:.topLeading)
+           
     }
 }
 
