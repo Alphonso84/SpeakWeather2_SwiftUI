@@ -13,29 +13,37 @@ struct ContentView: View {
     @State private var pickerSelection = Int()
     var body: some View {
         ZStack {
-           // BackgroundView()
             VStack {
                 Spacer()
                 ScrollingCardView()
+                    .frame(width: 400)
+                    .offset(x: -40)
                     .padding(.top)
-               Picker(selection:$pickerSelection, label:Text("Picker"), content:{
+                Picker(selection:$pickerSelection, label:Text("Picker"), content:{
                     Text("Day").tag(0)
                     Text("Week").tag(1)
                 })
-               .padding(.bottom)
-               .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-               .pickerStyle(SegmentedPickerStyle())
+                .padding(.bottom)
+                .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .pickerStyle(SegmentedPickerStyle())
                 
                 List(0..<10, id: \.self) {row in
                     ZStack {
                         HStack {
+                            Image(systemName:"sun.max.fill")
+                                .renderingMode(.original)
+                                .resizable()
+                                .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            Spacer()
                             Text("Test")
+                            Spacer()
+                            Text("89")
                         }
                     }
                 }
                 .frame(width: 400, height: 450, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .offset(y: 10)
-              Spacer()
+                Spacer()
             }
         }
         
@@ -44,14 +52,13 @@ struct ContentView: View {
 }
 
 struct ScrollingCardView: View {
-    @State var city = String()
     @State var angle: Double = 1
     @State var counter = 0
     var body: some View {
             ScrollView(.horizontal){
                 HStack(alignment:.center, spacing:10){
-                    ForEach( 0..<20) { CityWeather in
-                        CityCardView(city: "San Francisco", condition: "Partly Cloudy",image: "sun.max.fill", temp: 54)
+                    ForEach( cityArray,id:\.self) { cityFromArray in
+                        CityCardView(city: cityFromArray, condition: "Partly Cloudy",image: "sun.max.fill", temp: 54)
                             .offset(x: 100)
                     }
                 }
