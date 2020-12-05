@@ -20,6 +20,7 @@ struct CityCardView: View {
             Text(city)
                 .bold()
                 .font(.title)
+                .fixedSize()
                 .foregroundColor(Color(.label))
             Text(condition)
                 .font(.title2)
@@ -37,7 +38,7 @@ struct CityCardView: View {
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 15)
-                .stroke(lineWidth: 1)
+                .stroke(lineWidth: 0.1)
                 .shadow(color: .gray, radius: 10, x: 2, y: 1))
         
         .foregroundColor(Color(.label))

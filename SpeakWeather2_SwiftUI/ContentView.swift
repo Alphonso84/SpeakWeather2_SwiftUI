@@ -7,18 +7,21 @@
 
 import SwiftUI
 
-var cityArray = ["San Francisco","Oakland","San Leandro","San Jose","Antioch", "Alameda"]
+
 
 struct ContentView: View {
+    @State private var cityArray = ["San Francisco"]
     @State private var pickerSelection = Int()
     var body: some View {
         ZStack {
+            BackgroundView()
             VStack {
                 Spacer()
-                ScrollingCardView()
-                    .frame(width: 400)
-                    .offset(x: -40)
-                    .padding(.top)
+                CityCardView(city: "San Francisco", condition: "Sunny", image: "sun.max.fill", temp: 70)
+//                ScrollingCardView(cityForecasts:$cityArray)
+//                    .frame(width: 400)
+//                    //.offset(x: -40)
+//                    .padding(.top)
                 Picker(selection:$pickerSelection, label:Text("Picker"), content:{
                     Text("Day").tag(0)
                     Text("Week").tag(1)
@@ -28,8 +31,8 @@ struct ContentView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 
                 List(0..<10, id: \.self) {row in
-                    ZStack {
-                        HStack {
+                    
+                    HStack {
                             Image(systemName:"sun.max.fill")
                                 .renderingMode(.original)
                                 .resizable()
@@ -39,11 +42,15 @@ struct ContentView: View {
                             Spacer()
                             Text("89")
                         }
-                    }
+                    
+                    
                 }
+                .opacity(0.1)
+
+                
                 .frame(width: 400, height: 450, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .offset(y: 10)
-                Spacer()
+                                Spacer()
             }
         }
         
@@ -52,12 +59,11 @@ struct ContentView: View {
 }
 
 struct ScrollingCardView: View {
-    @State var angle: Double = 1
-    @State var counter = 0
+    @Binding var cityForecasts: [String]
     var body: some View {
             ScrollView(.horizontal){
                 HStack(alignment:.center, spacing:10){
-                    ForEach( cityArray,id:\.self) { cityFromArray in
+                    ForEach( cityForecasts,id:\.self) { cityFromArray in
                         CityCardView(city: cityFromArray, condition: "Partly Cloudy",image: "sun.max.fill", temp: 54)
                             .offset(x: 100)
                     }
